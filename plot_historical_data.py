@@ -1,5 +1,5 @@
 import yfinance as yf
-
+import matplotlib.pyplot as plt
 # Define the ticker symbol
 ticker_symbol = "RELIANCE.NS"
 
@@ -8,9 +8,6 @@ reliance = yf.Ticker(ticker_symbol)
 
 # Get historical closing prices for the past year
 reliance_hist = reliance.history(period="1y")
-
-import matplotlib.pyplot as plt
-
 # Plotting the closing prices
 plt.figure(figsize=(10, 5))
 plt.plot(reliance_hist.index, reliance_hist['Close'], label='Closing Price')
